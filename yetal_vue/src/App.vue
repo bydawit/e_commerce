@@ -23,8 +23,8 @@
         v-bind:class="{ 'is-active': showMobileMenu }"
       >
         <div class="navbar-end">
-          <router-link to="/Summer" class="navbar-item">Summer</router-link>
-          <router-link to="/Winter" class="navbar-item">Winter</router-link>
+          <router-link to="/summer" class="navbar-item">Summer</router-link>
+          <router-link to="/winter" class="navbar-item">Winter</router-link>
           <div class="navbar-item">
             <div class="buttons">
               <router-link to="/log-in" class="button is-light"
