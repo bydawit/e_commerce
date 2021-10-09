@@ -48,6 +48,7 @@ export default {
   methods: {
     async getProduct() {
       this.$store.commit('setIsLoading', true)
+
       const category_slug = this.$route.params.category_slug;
       const product_slug = this.$route.params.product_slug;
 
@@ -55,6 +56,8 @@ export default {
         .get(`/api/v1/products/${category_slug}/${product_slug}`)
         .then((response) => {
           this.product = response.data;
+
+          document.title = this.product.name + ' | Yetal'
         })
         .catch((error) => {
           console.log(error);
