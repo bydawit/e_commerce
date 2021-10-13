@@ -1,3 +1,4 @@
 /env
 .gitignore
 yetal_django/yetal_django/secret.py
+yetal_vue/.env

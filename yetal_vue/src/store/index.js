@@ -4,10 +4,10 @@ export default createStore({
   state: {
     cart: {
       items: [],
-      isAuthenticated: false,
-      token: "",
-      isLoading: false,
     },
+    isAuthenticated: false,
+    token: "",
+    isLoading: false,
   },
   mutations: {
     initializeStore(state) {
@@ -18,7 +18,7 @@ export default createStore({
       }
 
       if (localStorage.getItem("token")) {
-        state.token = localStorage.getItem("toekn");
+        state.token = localStorage.getItem("token");
         state.isAuthenticated = true;
       } else {
         state.token = "";
@@ -27,9 +27,8 @@ export default createStore({
     },
     addToCart(state, item) {
       const exists = state.cart.items.filter(
-        (i) => i.product.id == item.product.id
+        (i) => i.product.id === item.product.id
       );
-
       if (exists.length) {
         exists[0].quantity =
           parseInt(exists[0].quantity) + parseInt(item.quantity);
@@ -49,6 +48,11 @@ export default createStore({
     removeToken(state) {
       state.token = "";
       state.isAuthenticated = false;
+    },
+    clearCart(state) {
+      state.cart = { items: [] };
+
+      localStorage.setItem("cart", JSON.stringify(state.cart));
     },
   },
   actions: {},

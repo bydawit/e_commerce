@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-from .secret import STRIPE_SECRET_KEY
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +26,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-STRIPE_SECRET_KEY = STRIPE_SECRET_KEY
+STRIPE_SECRET_KEY = "sk_test_51JjpbyC40v005JAqqT5PRBaNWCb9zxV9hnQwn57bGD59SzKtU8aNmp57l6lKqHNXvHpLyoyJeYjsL69tmJMsrhDa00SzLHmQqU"
 
 # Application definition
 
